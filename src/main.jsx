@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import UpdateProfile from './Pages/UpdateProfile/UpdateProfile'
 
 
 const router = createBrowserRouter([
@@ -19,15 +20,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path:'/navbar',
-        element: <NavBar></NavBar>
+        element: <NavBar></NavBar>,
       },
       {
         path: '/footer',
-        element: <Footer></Footer>
+        element: <Footer></Footer>,
+      },
+      {
+        path: '/updateprofile',
+        element: <UpdateProfile></UpdateProfile>
       }
     ]
   },
