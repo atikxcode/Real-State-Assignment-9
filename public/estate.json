@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Penthouse with Stunning Views",
+    "segment_name": "Penthouse",
+    "description": "Experience luxury living at its finest with this stunning penthouse featuring breathtaking views of the city skyline. Spacious interiors, modern amenities, and exclusive rooftop access.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "image": "luxury_penthouse.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Exquisite Beachfront Villa",
+    "segment_name": "Villa",
+    "description": "Own a piece of paradise with this exquisite beachfront villa. Private beach access, infinity pool, and lush tropical gardens make this property a true gem.",
+    "price": "$8,500,000",
+    "status": "sale",
+    "image": "beachfront_villa.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Exclusive Private Island Retreat",
+    "segment_name": "Private Island",
+    "description": "Escape to your own private island paradise. Pristine beaches, crystal-clear waters, and luxurious accommodations await on this secluded retreat.",
+    "price": "$15,000,000",
+    "status": "sale",
+    "image": "private_island.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Luxurious Mansion with Ocean Views",
+    "segment_name": "Mansion",
+    "description": "Live in luxury in this sprawling mansion overlooking the ocean. Elegant interiors, expansive grounds, and state-of-the-art amenities make this property truly exceptional.",
+    "price": "$12,000,000",
+    "status": "sale",
+    "image": "luxury_mansion.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Secluded Mountain Retreat",
+    "segment_name": "Resort",
+    "description": "Discover tranquility in this secluded mountain retreat. Nestled amidst lush forests and majestic peaks, this property offers the perfect escape from the hustle and bustle of city life.",
+    "price": "$20,000/month",
+    "status": "rent",
+    "image": "mountain_retreat.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Elegant Lakeside Estate",
+    "segment_name": "Estate",
+    "description": "Indulge in lakeside luxury with this elegant estate. Sweeping views of the lake, beautifully landscaped gardens, and a private boat dock make this property truly exceptional.",
+    "price": "$30,000/month",
+    "status": "rent",
+    "image": "lakeside_estate.jpg"
+  },
+  {
+    "id": 7,
+    "estate_title": "Charming Countryside Manor",
+    "segment_name": "Manor",
+    "description": "Escape to the charming countryside with this exquisite manor. Set amidst rolling hills and picturesque landscapes, this property offers timeless elegance and rural charm.",
+    "price": "$22,000/month",
+    "status": "rent",
+    "image": "countryside_manor.jpg"
+  },
+  {
+    "id": 8,
+    "estate_title": "Luxury Ski Chalet",
+    "segment_name": "Chalet",
+    "description": "Experience luxury ski living with this stunning chalet. Located slopeside with direct access to the ski trails, this property offers the ultimate alpine getaway.",
+    "price": "$45,000/month",
+    "status": "rent",
+    "image": "ski_chalet.jpg"
+  },
+  {
+    "id": 9,
+    "estate_title": "Grand Historic Estate",
+    "segment_name": "Estate",
+    "description": "Step back in time with this grand historic estate. Rich in history and architectural splendor, this property offers a rare opportunity to own a piece of the past.",
+    "price": "$14,000,000",
+    "status": "sale",
+    "image": "historic_estate.jpg"
+  },
+  {
+    "id": 10,
+    "estate_title": "Luxury Riverside Mansion",
+    "segment_name": "Mansion",
+    "description": "Live in luxury along the riverfront with this magnificent mansion. Stunning views, luxurious amenities, and meticulous craftsmanship make this property a true masterpiece.",
+    "price": "$11,800,000",
+    "status": "sale",
+    "image": "riverside_mansion.jpg"
+  }
+]

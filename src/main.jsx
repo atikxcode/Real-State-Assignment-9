@@ -11,6 +11,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile'
+import Slider from './Pages/Slider/Slider'
+import Estate from './Pages/Estate/Estate'
+import About from './Pages/About/About'
+import Contact from './Pages/Contact/Contact'
+import Login from './Pages/Login/Login'
+import Register from './Pages/Register/Register'
 
 
 const router = createBrowserRouter([
@@ -32,7 +38,31 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateprofile',
-        element: <UpdateProfile></UpdateProfile>
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
+        path: '/slider',
+        element:<Slider></Slider>,
+      },
+      {
+        path: '/estate',
+        element: <Estate></Estate>
+      },
+      {
+        path: '/about',
+        element: <About></About>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      },
+      {
+        path:'/login',
+        element: <Login></Login>
+      },
+      {
+        path:'/register',
+        element: <Register></Register>
       }
     ]
   },

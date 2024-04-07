@@ -3,9 +3,11 @@ import NavBar from "../Pages/NavBar/NavBar";
 import Footer from "../Pages/Footer/Footer";
 const Root = () => {
   return (
-    <div className=" ">
+    <div className="font-playfair">
         <NavBar></NavBar>
+        
         <Outlet></Outlet>
+        
         <Footer></Footer>
     </div>
   );
