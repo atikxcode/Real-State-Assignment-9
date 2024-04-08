@@ -17,6 +17,7 @@ import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
+import PropertyDetails from './Pages/PropertyDetails/PropertyDetails'
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register></Register>
+      },
+      {
+        path: '/propertydetails/:id',
+        element: <PropertyDetails></PropertyDetails>
       }
     ]
   },
