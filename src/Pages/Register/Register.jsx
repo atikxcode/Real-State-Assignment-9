@@ -1,9 +1,9 @@
-
+import 'animate.css';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
-    <div>
+    <div className='my-20 animate__animated animate__lightSpeedInRight'>
   
     
     <div>

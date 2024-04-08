@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import 'animate.css';
 
 const Login = () => {
   return (
-    <div>
+    <div className="my-24 animate__animated animate__flipInX">
       
       
       <div>
