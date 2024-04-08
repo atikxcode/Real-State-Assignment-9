@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
   const notify1 = () => toast("Password must have an uppercase letter, a lowercase letter, and a minimum length of 6 characters.");
   const notify2 = () => toast("Thanks for joining with us");
 
+  const [showPassword, setShowPassword] = useState(false)
 
   const {createUser, updateUser} = useContext(AuthContext);
 
@@ -93,7 +95,17 @@ const Register = () => {
   <label className="label">
     <span className="text-[#403F3F] text-[20px] font-semibold">Password</span>
   </label>
-  <input type="password" placeholder="Enter your password" name="password" className="input bg-[#F3F3F3] text-[#9F9F9F]" value={password} onChange={e => setPassword(e.target.value)} required />
+  <div className="flex items-center border relative">
+   <input 
+    type={showPassword ? 'text' : 'password'}
+    placeholder="Enter your password"
+     name="password" 
+     className="input bg-[#F3F3F3] text-[#9F9F9F]  w-full"
+      value={password}
+       onChange={e => setPassword(e.target.value)} required />
+    <span className="absolute right-[2%]" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
+    
+   </div>
   <label className="label">
     
   </label>

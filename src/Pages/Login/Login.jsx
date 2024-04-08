@@ -4,11 +4,11 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useHistory } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
 
-  const history = useHistory();
+  
 
   const notify = () => toast("Wrong Email Or Password");
 
@@ -16,6 +16,8 @@ const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [showPassword, setShowPassword] = useState(false)
   
   const handleLogin = e => {
     e.preventDefault();
@@ -25,7 +27,7 @@ const Login = () => {
       console.log(result.user)
       setEmail('')
       setPassword('')
-      history.push('/')
+      
     })
     .catch(error => {
       console.error(error)
@@ -76,7 +78,18 @@ const Login = () => {
     <label className="label">
       <span className="text-[#403F3F] text-[20px] font-semibold">Password</span>
     </label>
-    <input type="password" placeholder="Enter your password" name="password" className="input bg-[#F3F3F3] text-[#9F9F9F]" value={password} onChange={e => setPassword(e.target.value)} required />
+    
+   <div className="flex items-center border relative">
+   <input 
+    type={showPassword ? 'text' : 'password'}
+    placeholder="Enter your password"
+     name="password" 
+     className="input bg-[#F3F3F3] text-[#9F9F9F]  w-full"
+      value={password}
+       onChange={e => setPassword(e.target.value)} required />
+    <span className="absolute right-[2%]" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
+    
+   </div>
     <label className="label">
       <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
     </label>
