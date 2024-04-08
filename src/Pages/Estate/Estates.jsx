@@ -1,12 +1,16 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const Estates = ({property}) => {
 
+ 
+
   const {estate_title, segment_name, description, price, status, area, location, facilities, additional_information, estate_image, id } = property;
 
   return (
-    <div className=" p-4 bg-cover bg-center w-[450px] h-[400px] relative group rounded-lg " style={{backgroundImage: `url(${estate_image})`}}>
+    <div className=" p-4 bg-cover bg-center w-[450px] h-[400px] relative group rounded-lg "  style={{backgroundImage: `url(${estate_image})`}}>
        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity"></div>
       {/* <img className="w-[450px] h-[350px]" src={estate_image} alt="" /> */}
       <div className="absolute inset-0 gap-2 p-4 flex flex-col  items-center opacity-0 group-hover:opacity-100 transition-opacity ">
@@ -20,7 +24,7 @@ const Estates = ({property}) => {
         <p className=" p-2 rounded-2xl  text-[20px] ">{location}</p>
         </div>
         <div className="w-full items-start p-4 flex justify-center">
-        <button className="btn hover:bg-orange-500 border-0 text-black text-lg font-bold"><Link to={`/propertydetails/${id}`}></Link>View Property</button>
+        <button className="btn hover:bg-orange-500 border-0 text-black text-lg font-bold"><Link to={`/propertydetails/${id}`}>View Property</Link></button>
         </div>
        
         

@@ -1,7 +1,45 @@
 import 'animate.css';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
+
+  const {createUser} = useContext(AuthContext);
+
+
+  const [name, setName] = useState('');
+  const [photo, setPhoto] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+  const handleRegister = e => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+
+  
+
+    const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password);
+
+    if (!isValidPassword) {
+      alert('Password must have an uppercase letter, a lowercase letter, and a minimum length of 6 characters.');
+      return;
+    }
+
+    // Creating user here
+    createUser(email, password)
+    .then(result => {
+      console.log(result.user)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+
+
+  
+  }
+
   return (
     <div className='my-20 animate__animated animate__lightSpeedInRight'>
   
@@ -10,39 +48,36 @@ const Register = () => {
     <h2 className="my-10 text-center text-[#403F3F] text-[35px] font-semibold">Register your account</h2>
     
 
-<form  className="md:3/4 lg:w-1/2 mx-auto">
+<form  className="md:3/4 lg:w-1/2 mx-auto" onSubmit={handleRegister}>
 
 <div className="form-control">
   <label className="label">
     <span className="text-[#403F3F] text-[20px] font-semibold">Your Name</span>
   </label>
-  <input type="text" placeholder="Enter your name" name="name" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" required />
+  <input type="text" placeholder="Enter your name" name="name" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={name} onChange={e => setName(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
     <span className="text-[#403F3F] text-[20px] font-semibold">Photo URL</span>
   </label>
-  <input type="text" placeholder="Enter your photo URL" name="photo" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" required />
+  <input type="text" placeholder="Enter your photo URL" name="photo" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={photo} onChange={e => setPhoto(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
     <span className="text-[#403F3F] text-[20px] font-semibold">Email address</span>
   </label>
-  <input type="email" placeholder="Enter your email address" name="email" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" required />
+  <input type="email" placeholder="Enter your email address" name="email" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={email} onChange={e => setEmail(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
     <span className="text-[#403F3F] text-[20px] font-semibold">Password</span>
   </label>
-  <input type="password" placeholder="Enter your password" name="password" className="input bg-[#F3F3F3] text-[#9F9F9F]" required />
+  <input type="password" placeholder="Enter your password" name="password" className="input bg-[#F3F3F3] text-[#9F9F9F]" value={password} onChange={e => setPassword(e.target.value)} required />
   <label className="label">
-    <div className="flex items-center gap-2">
-      <input type="checkbox" name="checkbox" id="1243345" />
-      <p className="text-[#706F6F] text-[16px]">Accept <span className="font-semibold">Term & Conditions</span></p>
-    </div>
+    
   </label>
 </div>
 <div className="form-control mt-6">

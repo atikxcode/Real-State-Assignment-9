@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 import Estates from './Estates';
 
+
 const Estate = () => {
+
 
   const [properties, setProperties] = useState([])
 
