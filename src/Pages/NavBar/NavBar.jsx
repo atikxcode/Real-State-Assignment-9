@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import 'animate.css';
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import './NavBar.css'
 const NavBar = () => {
 
   const {user , logOut} = useContext(AuthContext);
@@ -43,9 +43,16 @@ const NavBar = () => {
   </div>
   <div className="navbar-end gap-4">
   <div className="avatar">
-  <div className="w-12 rounded-full">
-    <img src='' />
-  </div>
+    {user && (
+       <div className="w-12 rounded-full ">
+       <img src={user.photoURL}/>
+       <span className="tooltip">{user.displayName}</span> 
+     </div>
+    )}
+     
+ 
+    
+  
   
 </div>
     {

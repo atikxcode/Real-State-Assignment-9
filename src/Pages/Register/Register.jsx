@@ -2,10 +2,16 @@ import 'animate.css';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-  const {createUser} = useContext(AuthContext);
+  const notify1 = () => toast("Password must have an uppercase letter, a lowercase letter, and a minimum length of 6 characters.");
+  const notify2 = () => toast("Thanks for joining with us");
+
+
+  const {createUser, updateUser} = useContext(AuthContext);
 
 
   const [name, setName] = useState('');
@@ -23,14 +29,26 @@ const Register = () => {
     const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password);
 
     if (!isValidPassword) {
-      alert('Password must have an uppercase letter, a lowercase letter, and a minimum length of 6 characters.');
+      notify1();
       return;
     }
 
     // Creating user here
     createUser(email, password)
     .then(result => {
-      console.log(result.user)
+      
+      updateUser(result.user, name, photo)
+      .then(() => {
+        notify2();
+        setName('')
+        setPhoto('')
+        setEmail('')
+        setPassword('')
+      })
+      .catch(error => {
+        console.error(error)
+      })
+      
     })
     .catch(error => {
       console.error(error)
@@ -88,7 +106,7 @@ const Register = () => {
     </div>
 
 
-
+    <ToastContainer />
   </div>
   );
 };

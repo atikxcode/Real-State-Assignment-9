@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import 'animate.css';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
-  const {signIn} = useContext(AuthContext);
+  const notify = () => toast("Wrong Email Or Password");
+
+  const {signIn, handleGoogleSignIn, handleGithubSignIn} = useContext(AuthContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,9 +26,32 @@ const Login = () => {
     })
     .catch(error => {
       console.error(error)
+      notify();
     })
   
   }
+
+  const googleLogin = () => {
+    handleGoogleSignIn()
+  .then(result => {
+    const user = result.user;
+  })
+  .catch(error => {
+    console.log('error', error.message)
+  })
+  }
+
+  const githubLogin = () => {
+    handleGithubSignIn()
+    .then(result => {
+      const loggedInUser = result.user;
+      console.log(loggedInUser);
+    })
+    .catch(error => {
+      console.error(error)
+    })
+  }
+
 
 
   return (
@@ -53,11 +81,15 @@ const Login = () => {
   <div className="form-control mt-6">
     <button className="btn bg-[#403F3F] text-white text-xl font-semibold">Login</button>
   </div>
+  <button onClick={googleLogin} className="mt-10 border w-full p-3 text-lg hover:text-white hover:bg-gray-600 transition-all rounded-2xl">Sign In with Google</button>
+  <button onClick={githubLogin} className="mt-10 border w-full p-3 text-lg hover:text-white hover:bg-gray-600 transition-all rounded-2xl">Sign In with Github</button>
   <p className="text-center mt-6 text-[#706F6F] font-semibold">Don't Have An Account? <Link to='/register'><span className="text-[#F75B5F] text-[16px] font-semibold">Register</span></Link></p>
 </form>
       </div>
 
- 
+      
+
+      <ToastContainer />
   
     </div>
   );
