@@ -20,6 +20,7 @@ import Register from './Pages/Register/Register'
 import PropertyDetails from './Pages/PropertyDetails/PropertyDetails'
 import AuthProvider from './Providers/AuthProvider'
 import PrivateRoute from './Pages/Routes/PrivateRoute'
+import PrivateRoute2 from './Pages/Routes/PrivateRoute2'
 
 
 
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateprofile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: <PrivateRoute2><UpdateProfile></UpdateProfile></PrivateRoute2>,
       },
       {
         path: '/slider',

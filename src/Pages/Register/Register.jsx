@@ -40,15 +40,26 @@ const Register = () => {
     // Creating user here
     createUser(email, password)
     .then(result => {
-      navigate(location?.state ? location.state : '/');
+      
       
       updateUser(result.user, name, photo)
       .then(() => {
-        notify2();
-        setName('')
-        setPhoto('')
-        setEmail('')
-        setPassword('')
+        
+        setTimeout(() => {
+          notify2();
+          setName('')
+          setPhoto('')
+          setEmail('')
+          setPassword('')
+          
+        }, 500);
+
+        setTimeout(() => {
+          
+          navigate(location?.state ? location.state : '/');
+          window.location.reload();
+        }, 2000);
+        
         
       })
       .catch(error => {
