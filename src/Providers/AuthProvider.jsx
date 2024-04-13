@@ -23,16 +23,20 @@ const AuthProvider = ({children}) => {
   }
 
   const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth)
   }
 
   const updateUser = (user, name, photo) => {
+    
     return updateProfile(user, {
       displayName: name,
        photoURL: photo
@@ -40,6 +44,7 @@ const AuthProvider = ({children}) => {
   }
 
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
   }
 
@@ -47,6 +52,7 @@ const AuthProvider = ({children}) => {
    const unSubscribe =  onAuthStateChanged(auth, currentUser => {
       console.log('user in the auth state changed', currentUser)
       setUser(currentUser)
+      setLoading(false)
     });
     return () => {
       unSubscribe();
@@ -60,7 +66,8 @@ const AuthProvider = ({children}) => {
     signIn,
     handleGoogleSignIn,
     handleGithubSignIn,
-    updateUser
+    updateUser,
+    loading,
 
   }
 

@@ -1,12 +1,14 @@
 import 'animate.css';
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+
+  const navigate  = useNavigate();
 
   const notify1 = () => toast("Password must have an uppercase letter, a lowercase letter, and a minimum length of 6 characters.");
   const notify2 = () => toast("Thanks for joining with us");
@@ -38,6 +40,7 @@ const Register = () => {
     // Creating user here
     createUser(email, password)
     .then(result => {
+      navigate(location?.state ? location.state : '/');
       
       updateUser(result.user, name, photo)
       .then(() => {
@@ -46,6 +49,7 @@ const Register = () => {
         setPhoto('')
         setEmail('')
         setPassword('')
+        
       })
       .catch(error => {
         console.error(error)

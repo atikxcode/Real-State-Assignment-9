@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import 'animate.css';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -8,6 +8,9 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
 
+
+  const location = useLocation();
+  const navigate = useNavigate();
   
 
   const notify = () => toast("Wrong Email Or Password");
@@ -25,6 +28,7 @@ const Login = () => {
     signIn(email, password)
     .then(result => {
       console.log(result.user)
+      navigate(location?.state ? location.state : '/');
       setEmail('')
       setPassword('')
       
@@ -39,6 +43,7 @@ const Login = () => {
   const googleLogin = () => {
     handleGoogleSignIn()
   .then(result => {
+    navigate(location?.state ? location.state : '/');
     const user = result.user;
   })
   .catch(error => {
@@ -49,6 +54,7 @@ const Login = () => {
   const githubLogin = () => {
     handleGithubSignIn()
     .then(result => {
+      navigate(location?.state ? location.state : '/');
       const loggedInUser = result.user;
       console.log(loggedInUser);
     })
@@ -79,7 +85,7 @@ const Login = () => {
       <span className="text-[#403F3F] text-[20px] font-semibold">Password</span>
     </label>
     
-   <div className="flex items-center border relative">
+   <div className="flex items-center  relative">
    <input 
     type={showPassword ? 'text' : 'password'}
     placeholder="Enter your password"
@@ -90,9 +96,7 @@ const Login = () => {
     <span className="absolute right-[2%]" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
     
    </div>
-    <label className="label">
-      <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-    </label>
+    
   </div>
   <div className="form-control mt-6">
     <button className="btn bg-[#403F3F] text-white text-xl font-semibold">Login</button>

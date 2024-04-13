@@ -19,6 +19,7 @@ import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import PropertyDetails from './Pages/PropertyDetails/PropertyDetails'
 import AuthProvider from './Providers/AuthProvider'
+import PrivateRoute from './Pages/Routes/PrivateRoute'
 
 
 
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/propertydetails/:id',
-        element: <PropertyDetails></PropertyDetails>,
+        element: <PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>,
         
       }
     ]
