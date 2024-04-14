@@ -1,0 +1,48 @@
+
+    .custom-border {
+        border: 2px solid #ff7f0e; 
+        border-radius: 20px;
+        padding: 20px;
+        transition: box-shadow 0.3s; 
+    }
+
+    .custom-border:hover {
+        box-shadow: 0 0 10px 0 #ff7f0e; 
+        border-color: #ff7f0e; 
+    }
+
+    .custom-border2 {
+        border: 2px solid #ff7f0e; 
+        border-radius: 50%;
+        padding:1px;
+        transition: box-shadow 0.3s; 
+    }
+
+    .custom-border2:hover {
+        box-shadow: 0 0 10px 0 #ff7f0e; 
+        border-color: #ff7f0e; 
+    }
+
+    .custom-border3 {
+        border: 2px solid #ff7f0e; 
+        border-radius: 20px;
+        padding:10px;
+        transition: box-shadow 0.3s; 
+    }
+
+    .custom-border3:hover {
+        box-shadow: 0 0 10px 0 #ff7f0e; 
+        border-color: #ff7f0e; 
+    }
+
+    .custom-button {
+        color:white;
+        font-weight: 600;
+        transition: box-shadow .7s;
+    }
+
+    .custom-button:hover{
+        box-shadow: 0 0 10px 0 white;
+
+    }
+

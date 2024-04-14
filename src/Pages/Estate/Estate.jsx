@@ -4,15 +4,18 @@ import { useEffect, useState } from 'react';
 import Estates from './Estates';
 
 
+
 const Estate = () => {
 
 
   const [properties, setProperties] = useState([])
 
   useEffect(() =>{
+    
     fetch('estate.json')
     .then(res => res.json())
     .then(data => setProperties(data))
+    
   },[])
 
   return (
@@ -22,7 +25,7 @@ const Estate = () => {
       <p className='text-lg text-center w-[500px]'>From spacious suites to deluxe rooms, our Premier Properties offer a range of accommodations tailored to elevate your stay to new heights of luxury</p>
       </div>
 
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='grid grid-cols-3 gap-4' >
       {
         properties.map(property => <Estates key={property.id} property={property}></Estates>)
       }
