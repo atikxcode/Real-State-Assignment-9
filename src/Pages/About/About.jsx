@@ -8,17 +8,38 @@ import team3 from '../../assets/11.jpg'
 import team4 from '../../assets/12.jpg'
 import team5 from '../../assets/13.jpg'
 import team6 from '../../assets/14.jpg'
+import React, { useEffect, useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
 
+import './AboutStyle.css';
+
+// import required modules
+import { FreeMode, Pagination } from 'swiper/modules';
+import 'aos/dist/aos.css'
+import Aos from "aos";
 
 
 const About = () => {
+
+  useEffect(() => {
+    Aos.init();
+  },[])
+
   return (
-    <div className=' mb-24 bg-[#1b1b1b] p-10'>
+    <div className=' pb-24 bg-[#1b1b1b] p-10 '>
+      <div className='flex justify-center text-white mb-24'  data-aos="fade-up" data-aos-duration="2000">
+        <h2 className='text-[45px] font-medium'>About US</h2>
+      </div>
 
-      <div className='flex flex-col gap-24'>
+      <div className='flex flex-col gap-24' >
 
-      <div>
+      <div  data-aos="fade-up" data-aos-duration="2000">
 
       <div className='flex justify-center'>
       <div className='flex gap-12 '>
@@ -39,7 +60,7 @@ const About = () => {
 
       </div>
 
-      <div>
+      <div  data-aos="fade-up" data-aos-duration="2000">
 
       <div className='flex justify-center'>
       <div className='flex gap-12 '>
@@ -57,7 +78,7 @@ const About = () => {
 
       </div>
 
-      <div>
+      <div  data-aos="fade-up" data-aos-duration="2000">
 
       <div className='flex justify-center'>
 
@@ -78,68 +99,76 @@ const About = () => {
 
       </div>
 
-      <div>
+
+
+      <div  data-aos="fade-up" data-aos-duration="2000">
 
       <div className='flex flex-col  items-center '>
         <div className=' flex flex-col items-center text-center'>
-        <p className='text-[#b95c47] text-[15px]'>Profession</p>
+        <p className='text-[#b95c47] text-[15px]'>PROFESSIONAL</p>
         <h2 className='text-[45px] text-white w-[550px]'>Meet Our Team</h2>
         </div>
 
 
-
-      <div className='grid grid-cols-3 gap-6 '>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+        <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team1})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Valentina Karla</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>General Manager</p>
       </div>
-      </div>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+      </div></SwiperSlide>
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team2})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Micheal White</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>Guest Service Department</p>
       </div>
-      </div>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+      </div></SwiperSlide>
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team3})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Olivia Martin</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>Reservation Manager</p>
       </div>
-      </div>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+      </div></SwiperSlide>
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team4})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Marina Dana</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>F&B Manager</p>
       </div>
-      </div>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+      </div></SwiperSlide>
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team5})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Enrico Brown</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>Head Chef</p>
       </div>
-      </div>
-
-      <div className='flex flex-col  hover:scale-95 duration-1000'>
+      </div></SwiperSlide>
+        <SwiperSlide><div className='flex flex-col  hover:scale-95 duration-1000'>
       <div className=" p-4 bg-cover bg-center w-[350px] h-[400px] relative group  "  style={{backgroundImage: `url(${team6})`}}></div>
       <div className='flex flex-col text-white  bg-[#222] p-[30px] items-center'>
         <h2 className='text-[20px] mb-5'>Victoria Dan</h2>
         <p className='text-[#FFFFFF99] text-[15px]'>Meetings and Events Manager</p>
       </div>
-      </div>
+      </div></SwiperSlide>
+        
+      </Swiper>
 
 
-      </div>
+
+      
+
       </div>
 
       </div>

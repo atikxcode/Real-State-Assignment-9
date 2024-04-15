@@ -19,7 +19,8 @@ const Estate = () => {
   },[])
 
   return (
-    <div className='container mx-auto my-24'>
+    <div className=' bg-[#1b1b1b] pb-24'>
+      <div className='container mx-auto text-white pt-20'>
       <div className='flex flex-col items-center mb-24'>
       <h2 className='font-gilda text-[45px] font-medium '>Premier Properties, Rooms & Suites</h2>
       <p className='text-lg text-center w-[500px]'>From spacious suites to deluxe rooms, our Premier Properties offer a range of accommodations tailored to elevate your stay to new heights of luxury</p>
@@ -29,6 +30,7 @@ const Estate = () => {
       {
         properties.map(property => <Estates key={property.id} property={property}></Estates>)
       }
+      </div>
       </div>
       
       

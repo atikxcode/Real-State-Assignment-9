@@ -28,7 +28,7 @@ const Estates = ({property}) => {
         <p className=" p-2 rounded-2xl  text-[20px] ">{location}</p>
         </div>
         <div className="w-full items-start p-4 flex justify-center">
-        <button className="btn hover:bg-orange-500 border-0 text-black text-lg font-bold"><Link to={`/propertydetails/${id}`}>View Property</Link></button>
+        <button className="btn hover:bg-white hover:text-black bg-[#b95c47] duration-700 border-0 text-white text-lg font-bold"><Link to={`/propertydetails/${id}`}>View Property</Link></button>
         </div>
        
         

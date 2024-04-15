@@ -42,8 +42,8 @@ const UpdateProfile = () => {
       });
   };
   return (
-    <div className='mx-auto border my-24 container p-24 rounded-[40px] bg-[#1b1b1b] text-orange-400 animate__animated animate__rubberBand'>
-     <div className='flex flex-col items-center'>
+    <div className=' p-24 pb-32 bg-[#1b1b1b] text-orange-400 animate__animated animate__fadeInDown'>
+     <div className='flex flex-col items-center mx-auto container'>
      <div>
       <h2 className='text-[45px] font-bold mb-10 text-white'>Update Your Profile</h2>
       </div>

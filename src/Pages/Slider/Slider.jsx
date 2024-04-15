@@ -21,7 +21,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 const Slider = () => {
   return (
     
-  <div className='container mx-auto my-10'>
+  <div className='  bg-[#1b1b1b]'>
+    <div className='container mx-auto p-4'>
     <Swiper
         pagination={{
           type: 'fraction',
@@ -39,6 +40,7 @@ const Slider = () => {
         <SwiperSlide><img className='img' src={image7} alt="" /></SwiperSlide>
        
       </Swiper>
+    </div>
   </div>
    
   );

@@ -3,7 +3,7 @@ import Slider from "../Slider/Slider";
 
 const Home = () => {
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Slider></Slider>
       <Estate></Estate>
     </div>

@@ -21,6 +21,7 @@ import PropertyDetails from './Pages/PropertyDetails/PropertyDetails'
 import AuthProvider from './Providers/AuthProvider'
 import PrivateRoute from './Pages/Routes/PrivateRoute'
 import PrivateRoute2 from './Pages/Routes/PrivateRoute2'
+import ErrorPage from './Pages/ErrorPage/ErrorPage'
 
 
 
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

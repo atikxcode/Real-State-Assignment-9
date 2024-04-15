@@ -76,49 +76,51 @@ const Register = () => {
   }
 
   return (
-    <div className='my-20 animate__animated animate__lightSpeedInRight'>
+    <div className='pt-20 pb-20 bg-[#1b1b1b]  animate__animated animate__lightSpeedInRight'>
   
     
     <div>
-    <h2 className="my-10 text-center text-[#403F3F] text-[35px] font-semibold">Register your account</h2>
+
+    <div>
+    <h2 className="my-10 text-center text-white text-[35px] font-semibold">Register your account</h2>
     
 
 <form  className="md:3/4 lg:w-1/2 mx-auto" onSubmit={handleRegister}>
 
 <div className="form-control">
   <label className="label">
-    <span className="text-[#403F3F] text-[20px] font-semibold">Your Name</span>
+    <span className="text-white text-[20px] font-semibold">Your Name</span>
   </label>
-  <input type="text" placeholder="Enter your name" name="name" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={name} onChange={e => setName(e.target.value)} required />
+  <input type="text" placeholder="Enter your name" name="name" className="input bg-inherit text-white hover:border-white mb-4 border-[1px] border-[#b95c47]" value={name} onChange={e => setName(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
-    <span className="text-[#403F3F] text-[20px] font-semibold">Photo URL</span>
+    <span className="text-white  text-[20px] font-semibold">Photo URL</span>
   </label>
-  <input type="text" placeholder="Enter your photo URL" name="photo" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={photo} onChange={e => setPhoto(e.target.value)} required />
+  <input type="text" placeholder="Enter your photo URL" name="photo" className="input bg-inherit text-white hover:border-white mb-4 border-[1px] border-[#b95c47]" value={photo} onChange={e => setPhoto(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
-    <span className="text-[#403F3F] text-[20px] font-semibold">Email address</span>
+    <span className="text-white  text-[20px] font-semibold">Email address</span>
   </label>
-  <input type="email" placeholder="Enter your email address" name="email" className="input bg-[#F3F3F3] text-[#9F9F9F] mb-4" value={email} onChange={e => setEmail(e.target.value)} required />
+  <input type="email" placeholder="Enter your email address" name="email" className="input bg-inherit text-white hover:border-white mb-4 border-[1px] border-[#b95c47]" value={email} onChange={e => setEmail(e.target.value)} required />
 </div>
 
 <div className="form-control">
   <label className="label">
-    <span className="text-[#403F3F] text-[20px] font-semibold">Password</span>
+    <span className="text-white  text-[20px] font-semibold">Password</span>
   </label>
-  <div className="flex items-center border relative">
+  <div className="flex items-center  relative">
    <input 
     type={showPassword ? 'text' : 'password'}
     placeholder="Enter your password"
      name="password" 
-     className="input bg-[#F3F3F3] text-[#9F9F9F]  w-full"
+     className="input bg-inherit text-white hover:border-white mb-4 border-[1px] border-[#b95c47] w-full"
       value={password}
        onChange={e => setPassword(e.target.value)} required />
-    <span className="absolute right-[2%]" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
+    <span className="absolute right-[2%] top-[30%] text-white" onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}</span>
     
    </div>
   <label className="label">
@@ -126,10 +128,11 @@ const Register = () => {
   </label>
 </div>
 <div className="form-control mt-6">
-  <button className="btn bg-[#403F3F] text-white text-xl font-semibold">Register</button>
+  <button className="p-3 rounded-xl  text-white text-xl font-semibold bg-[#b95c47] hover:text-black hover:bg-white duration-700 ">Register</button>
 </div>
-<p className="text-center mt-6 text-[#706F6F] font-semibold">Already Have An Account? <Link to='/login'><span className="text-[#F75B5F] text-[16px] font-semibold">Login</span></Link></p>
+<p className="text-center mt-6 text-white font-semibold">Already Have An Account? <Link to='/login'><span className="text-[#F75B5F] text-[16px] font-semibold">Login</span></Link></p>
 </form>
+    </div>
     </div>
 
 
