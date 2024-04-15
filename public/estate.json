@@ -71,7 +71,7 @@
     "price": "$20,000,000",
     "status": "sale",
     "area": "15,000 sqft",
-    "location": "New York City, New York",
+    "location": "New York City",
     "facilities": ["Private Rooftop Pool", "Sky Lounge", "Home Automation System", "Gourmet Kitchen", "Fitness Center"],
     "view_property_button": true,
     "additional_information": {
@@ -155,7 +155,7 @@
     "price": "$18,000,000",
     "status": "sale",
     "area": "14,000 sqft",
-    "location": "Bora Bora, French Polynesia",
+    "location": "Bora, Polynesia",
     "facilities": ["Private Beach", "Infinity Pool", "Tropical Gardens", "Spa Pavilion", "Media Room"],
     "view_property_button": true,
     "additional_information": {
@@ -176,7 +176,7 @@
     "price": "$16,000",
     "status": "Rent",
     "area": "17,000 sqft",
-    "location": "London, United Kingdom",
+    "location": "United Kingdom",
     "facilities": ["Indoor Pool", "Sky Lounge", "Home Office", "Gourmet Kitchen", "Home Theater"],
     "view_property_button": true,
     "additional_information": {

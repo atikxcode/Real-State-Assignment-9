@@ -12,17 +12,24 @@ import image7 from '../../assets/7.jpg'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useEffect } from "react";
 import 'swiper/css/navigation';
+import 'aos/dist/aos.css'
+import Aos from "aos";
 
 import './style.css';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 const Slider = () => {
+
+  useEffect(() => {
+    Aos.init();
+  },[])
   return (
     
-  <div className='  bg-[#1b1b1b]'>
-    <div className='container mx-auto p-4'>
+  <div className='  bg-[#1b1b1b]' >
+    <div className='container mx-auto p-4' data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
     <Swiper
         pagination={{
           type: 'fraction',

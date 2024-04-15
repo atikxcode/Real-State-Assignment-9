@@ -5,8 +5,16 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
+import './Register.css'
 const Register = () => {
+
+  const isValidURL = (string) => {
+    var res = string.match(/\bhttps?:\/\/\S+\.(jpeg|jpg|gif|png|bmp|svg|webp|tiff|ico)\b/i);
+    return (res!== null)
+  };
+
+  
+
 
   const navigate  = useNavigate();
 
@@ -42,7 +50,7 @@ const Register = () => {
     .then(result => {
       
       
-      updateUser(result.user, name, photo)
+      updateUser(result.user, name, isValidURL(photo) ? photo :  'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg')
       .then(() => {
         
         setTimeout(() => {
@@ -76,10 +84,10 @@ const Register = () => {
   }
 
   return (
-    <div className='pt-20 pb-20 bg-[#1b1b1b]  animate__animated animate__lightSpeedInRight'>
+    <div className='pt-20 pb-10 md:pb-[220px] xl:pb-20 bg-[#1b1b1b] .page-container '>
   
     
-    <div>
+    <div className='animate__animated animate__lightSpeedInRight'>
 
     <div>
     <h2 className="my-10 text-center text-white text-[35px] font-semibold">Register your account</h2>
