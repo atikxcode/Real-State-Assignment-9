@@ -4,6 +4,7 @@ import Aos from "aos";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const notify = () => toast("THANKS FOR CONTACTING US");
@@ -29,7 +30,11 @@ const Contact = () => {
   },[])
   return (
     <div className="bg-[#1b1b1b] p-24 pb-36 text-white" >
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Contact - Elite Shores Escape</title>
 
+      </Helmet>
      <div className="mx-auto container justify-center" data-aos="fade-up" data-aos-duration="1500">
 
      <div className="flex flex-col xl:flex-row justify-center gap-10">

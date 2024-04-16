@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
@@ -67,7 +68,11 @@ const Login = () => {
 
   return (
     <div className="pt-24 pb-10 md:pb-[250px] xl:pb-20 bg-[#1b1b1b]  ">
-      
+      <Helmet>
+      <meta charSet="utf-8" />
+      <title>Login - Elite Shores Escape</title>
+
+      </Helmet>
       
       <div className="animate__animated animate__flipInX">
         

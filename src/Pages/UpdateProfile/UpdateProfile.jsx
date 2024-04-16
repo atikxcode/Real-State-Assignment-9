@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './UpdateProfile.css'
 import 'animate.css';
+import { Helmet } from 'react-helmet';
 
 const UpdateProfile = () => {
 
@@ -65,14 +66,20 @@ const UpdateProfile = () => {
   };
   return (
     <div className='lg:pt-[300px]  xl:p-24  lg:pb-[300px] xl:pb-32 bg-[#1b1b1b] text-orange-400 '>
+     <Helmet>
+      <meta charSet="utf-8" />
+      <title>Update Profile - Elite Shores Escape</title>
+
+      </Helmet>
      <div className='flex flex-col items-center mx-auto container animate__animated animate__fadeInDown'>
      <div>
       <h2 className='text-[20px] md:text-[35px] lg:text-[45px] font-bold mb-10 text-white'>Update Your Profile</h2>
       </div>
-      <div className='flex flex-col lg:flex-row gap-6 items-center'>
+      <div className='flex flex-col lg:flex-row gap-12 items-center'>
 
-        <div className='flex flex-col items-center gap-4'>
+        <div className='flex flex-col items-center gap-6'>
           <p className='text-[30px] font-bold'>{user.displayName? user.displayName : 'No name'}</p>
+          <p className='text-[30px] font-bold text-center'>{user.email? user.email : 'Email is private for this account'}</p>
           <img className='rounded-[50%] w-[250px] md:w-[350px] lg:w-[350px] h-auto custom-border2' src={user.photoURL} alt="" />
         </div>
 

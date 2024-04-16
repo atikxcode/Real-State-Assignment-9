@@ -23,6 +23,7 @@ import './AboutStyle.css';
 import { FreeMode, Pagination } from 'swiper/modules';
 import 'aos/dist/aos.css'
 import Aos from "aos";
+import { Helmet } from 'react-helmet'
 
 
 const About = () => {
@@ -33,6 +34,11 @@ const About = () => {
 
   return (
     <div className=' pb-24 bg-[#1b1b1b] p-4 md:p-6 lg:p-6 xl:p-10 '>
+      <Helmet>
+      <meta charSet="utf-8" />
+      <title>About - Elite Shores Escape</title>
+
+      </Helmet>
       <div className='flex justify-center text-white mb-24'  data-aos="fade-up" data-aos-duration="2000">
         <h2 className='text-[45px] font-medium'>About US</h2>
       </div>
@@ -76,7 +82,7 @@ const About = () => {
       <div className='flex flex-col md:flex-col lg:flex-col xl:flex-row justify-center md:justify-center lg:justify-center xl:justify-center'>
       <div className='flex flex-col md:flex-col lg:flex-col xl:flex-row gap-12'>
 
-      <div className=" p-4 bg-cover bg-center w-[90%] md:w-[90%] lg:w-[90%] xl:w-[225px] h-[400px] xl:h-[400px] relative group rounded-lg hover:scale-95 duration-1000 mx-auto md:mx-auto lg:mx-auto xl:mx-none order-2 xl:order-1"  style={{backgroundImage: `url(${bg})`}}></div>
+      <div className=" p-4 bg-cover bg-center w-[90%] md:w-[90%] lg:w-[90%] xl:w-[450px] h-[400px] xl:h-[400px] relative group rounded-lg hover:scale-95 duration-1000 mx-auto md:mx-auto lg:mx-auto xl:mx-none order-2 xl:order-1"  style={{backgroundImage: `url(${bg})`}}></div>
 
       <div className='flex flex-col gap-2 items-center md:items-center lg:items-center xl:items-start order-1 xl:order-2'>
       <p className='text-[#b95c47] text-[15px] text-center md:text-center lg:text-center xl:text-start'>SINCE 2007</p>
@@ -110,7 +116,7 @@ const About = () => {
       <p className='w-[90%] md:w-[90%] lg:w-[90%] xl:w-[500px] text-[#FFFFFF99] leading-[30px] text-center md:text-center lg:text-center xl:text-start'>Indulge in culinary excellence and exquisite libations at our sophisticated Restaurant & Bar. From innovative dishes to handcrafted cocktails, savor unforgettable moments in an ambiance of elegance and charm. Immerse yourself in a culinary journey where every dish tells a story of culinary mastery and creativity. Whether you're sipping on artisanal cocktails crafted by our expert mixologists or delighting in seasonal delicacies prepared by our renowned chefs, our Restaurant & Bar is the ultimate destination for discerning epicureans seeking unparalleled dining experiences.</p>
       </div>
 
-      <div className="p-4 bg-cover bg-center w-[90%] md:w-[90%] lg:w-[90%] xl:w-[225px] h-[400px] xl:h-[400px] relative group rounded-lg hover:scale-95 duration-1000 mx-auto md:mx-auto lg:mx-auto xl:mx-none"  style={{backgroundImage: `url(${bg3})`}}></div>
+      <div className="p-4 bg-cover bg-center w-[90%] md:w-[90%] lg:w-[90%] xl:w-[450px] h-[400px] xl:h-[400px] relative group rounded-lg hover:scale-95 duration-1000 mx-auto md:mx-auto lg:mx-auto xl:mx-none"  style={{backgroundImage: `url(${bg3})`}}></div>
 
       </div>
       </div>

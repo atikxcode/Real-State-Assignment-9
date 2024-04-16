@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import './Register.css'
+import { Helmet } from 'react-helmet';
 const Register = () => {
 
   const isValidURL = (string) => {
@@ -85,7 +86,12 @@ const Register = () => {
 
   return (
     <div className='pt-20 pb-10 md:pb-[220px] xl:pb-20 bg-[#1b1b1b] .page-container '>
-  
+    
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Register - Elite Shores Escape</title>
+
+      </Helmet>
     
     <div className='animate__animated animate__lightSpeedInRight'>
 
