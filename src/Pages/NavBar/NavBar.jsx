@@ -16,11 +16,9 @@ const NavBar = () => {
 
   const navLinks = <>
   <li><NavLink to='/'>Home</NavLink></li>
-  { user &&
-    <>
+  
      <li><NavLink to='/updateprofile'>Update Profile</NavLink></li>
-     </>
-  }
+    
   <li><NavLink to='/about'>About</NavLink></li>
   {
     user && 
