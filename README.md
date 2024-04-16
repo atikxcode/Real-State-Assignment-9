@@ -1,6 +1,6 @@
 # Elite Shores Escape
 
-Welcome to Elite Shores Escape, your go-to destination for finding the perfect getaway. Visit our website [here](https://elite-shores-escapes.web.app/).
+Welcome to Elite Shores Escape, your go-to destination for finding the perfect getaway. Visit our website [here](https://elite-shores-escape.netlify.app/).
 
 ## Features:
 
