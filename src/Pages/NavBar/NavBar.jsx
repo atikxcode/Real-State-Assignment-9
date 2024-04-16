@@ -22,7 +22,13 @@ const NavBar = () => {
      </>
   }
   <li><NavLink to='/about'>About</NavLink></li>
-  <li><NavLink to='/contact'>Contact</NavLink></li>
+  {
+    user && 
+    <>
+    <li><NavLink to='/contact'>Contact</NavLink></li>
+    </>
+  }
+  
   </>
   return (
     <div className="pb-10 bg-[#1b1b1b] pt-10">
